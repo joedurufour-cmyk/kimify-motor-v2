@@ -260,10 +260,23 @@ function generateVariants() {
   list.innerHTML = variants.map((v, i) => `
     <div class="variant-card">
       <span class="variant-num">V${i+1}</span>
-      <div style="padding-right:40px">${v}</div>
+      <div style="padding-right:40px; margin-bottom:8px;">${v}</div>
+      <button class="variant-copy-btn" data-variant="${i}">Copy Variant</button>
     </div>
   `).join('');
   overlay.classList.add('open');
+
+  // Attach copy handlers to variant buttons
+  list.querySelectorAll('.variant-copy-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = Number(btn.dataset.variant);
+      const prompt = variants[idx];
+      navigator.clipboard.writeText(prompt).then(() => {
+        toast(`V${idx+1} copied!`);
+      });
+    });
+  });
 
   variants.forEach((v, i) => addToHistory(c.name + ` V${i+1}`, v));
 }

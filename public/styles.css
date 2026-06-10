@@ -421,7 +421,7 @@ body {
   white-space: pre-wrap;
   word-break: break-word;
   position: relative;
-  padding-right: 70px;
+  padding-right: 16px;
 }
 
 .prompt-output::-webkit-scrollbar {
@@ -438,9 +438,27 @@ body {
 }
 
 .copy-btn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
+  padding: 8px 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 12px;
+  align-self: flex-start;
+}
+
+.copy-btn:hover {
+  background: #ff6b81;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.variant-copy-btn {
   padding: 6px 14px;
   background: var(--accent);
   border: none;
@@ -451,10 +469,10 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
-  z-index: 10;
+  margin-top: 10px;
 }
 
-.copy-btn:hover {
+.variant-copy-btn:hover {
   background: #ff6b81;
   transform: translateY(-1px);
 }
