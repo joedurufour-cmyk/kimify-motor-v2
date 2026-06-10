@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIMIFY MOTOR v3.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <div class="panel" id="leftPanel">
+      <div class="app-header">
+        <h1>⚡ KIMIFY MOTOR</h1>
+        <div class="subtitle">v3.0 — Anime Wallpaper Engine</div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">🎭 Character</div>
+        <div class="search-box">
+          <span class="icon">🔍</span>
+          <input type="text" id="charSearch" placeholder="Search characters...">
+        </div>
+        <div class="universe-tabs">
+          <button class="tab-btn active" data-universe="all">All</button>
+          <button class="tab-btn" data-universe="DC">DC</button>
+          <button class="tab-btn" data-universe="Marvel">Marvel</button>
+          <button class="tab-btn" data-universe="Anime">Anime</button>
+        </div>
+        <div class="char-grid" id="charGrid"></div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">🎨 Mode</div>
+        <div class="mode-grid">
+          <button class="mode-btn active" data-mode="anime">Anime</button>
+          <button class="mode-btn" data-mode="shonen">Shonen</button>
+          <button class="mode-btn" data-mode="manga">Manga</button>
+          <button class="mode-btn" data-mode="photo">Photo</button>
+          <button class="mode-btn" data-mode="neural">Neural</button>
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">💪 Muscle Intensity</div>
+        <div class="muscle-control">
+          <div class="muscle-labels">
+            <span>Soft</span>
+            <span id="muscleLabel">Ultra</span>
+            <span>Brutal</span>
+          </div>
+          <input type="range" class="muscle-slider" id="muscleSlider" min="1" max="5" value="3" step="1">
+        </div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">🎯 Pose</div>
+        <div class="select-grid" id="poseSelector"></div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">👗 Outfit</div>
+        <div class="select-grid" id="outfitSelector"></div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">🌍 Environment</div>
+        <div class="select-grid" id="environmentSelector"></div>
+      </div>
+      <div class="glass-card">
+        <div class="section-title">💡 Lighting</div>
+        <div class="select-grid" id="lightingSelector"></div>
+      </div>
+    </div>
+    <div class="panel" id="rightPanel">
+      <div class="preview-container" id="previewContainer"></div>
+      <div class="prompt-container">
+        <div class="prompt-label">Generated Prompt</div>
+        <div class="prompt-output" id="promptOutput">
+          <button class="copy-btn" id="btnCopy">Copy</button>
+          Select a character and configure options to generate a professional anime wallpaper prompt...
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn btn-primary" id="btnVariants">Generate Variants</button>
+        <button class="btn btn-secondary" id="btnExport">Export History</button>
+      </div>
+      <div class="history-container">
+        <div class="history-title">📜 History</div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+    </div>
+  </div>
+  <div class="variants-overlay" id="variantsOverlay">
+    <div class="variants-modal">
+      <div class="variants-title">🎨 Generated Variants</div>
+      <div class="variants-list" id="variantsList"></div>
+      <button class="btn btn-primary" id="btnCloseVariants" style="margin-top:20px;width:100%">Close</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

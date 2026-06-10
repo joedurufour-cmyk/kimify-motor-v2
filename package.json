@@ -1,0 +1,17 @@
+{
+  "name": "kimify-motor-v3",
+  "version": "3.0.0",
+  "description": "KIMIFY MOTOR v3.0 — Professional Anime Midjourney Prompt Engine for Superheroines",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["midjourney", "prompt-generator", "anime", "superheroes", "wallpapers"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  }
+}
